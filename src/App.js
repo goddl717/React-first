@@ -22,7 +22,7 @@ function App() {
     temp[0] = temp[1];
     temp[1] = temp2;
     temp.sort();
-    
+
     //temp[0] = '여자코트추천';
     글제목변경1(temp);                // 3.변경함수를 실행한다. 
   };
@@ -32,32 +32,52 @@ function App() {
   
   return (
     <div className="App">
-     <div className="black-nav">
-       <div style = {post2}> 개발 Blog</div>
-     </div>
-    <div className = "list">
-      <h3>{글제목1[0]} <span onClick={()=>{따봉변경(따봉+1)}}>❤️</span>{따봉}</h3>
-      <p> 2월 17일 발행</p>
-      <hr/>
-    </div>
-    
-    <div className = "list">
-      <h3>{글제목1[1]}</h3>
-      <p> 2월 17일 발행</p>
-      <hr/>
-    </div>
-    
-    <div className = "list">
-      <h3>{글제목1[2]}</h3> 
-      <p> 2월 17일 발행</p>
-      <hr/>
-    </div>
-    
-    <button onClick={글변경}>
-      버튼을 누르면 여자코트 추천으로 변경되게 하자.
-    </button>
+      <div className="black-nav">
+        <div style = {post2}> 개발 Blog</div>
+      </div>
+      <div className = "list">
+        <h3>{글제목1[0]} <span onClick={()=>{따봉변경(따봉+1)}}>❤️</span>{따봉}</h3>
+        <p> 2월 17일 발행</p>
+        <hr/>
+      </div>
+      
+      <div className = "list">
+        <h3>{글제목1[1]}</h3>
+        <p> 2월 17일 발행</p>
+        <hr/>
+      </div>
+      
+      <div className = "list">
+        <h3>{글제목1[2]}</h3> 
+        <p> 2월 17일 발행</p>
+        <hr/>
+      </div>
+      
+      <button onClick={글변경}>
+        버튼을 누르면 여자코트 추천으로 변경되게 하자.
+      </button>
+
+    <Modal></Modal>      
+    <Modal></Modal>      
+    <Modal></Modal>      
+    <Modal></Modal>      
+    <Modal></Modal>      
+      
     </div>
   );
+}
+
+//리액트를 쓰는 큰 이유 중 하나
+//html를 덩어리째 관리를 할 수 있다.
+//
+function Modal(){
+  return(
+      <div className='modal'>
+        <h2>제목</h2>
+        <p>날짜</p>
+        <p>상세내용</p>
+      </div>
+  )
 }
 
 export default App;
